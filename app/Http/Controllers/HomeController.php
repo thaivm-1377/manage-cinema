@@ -62,8 +62,7 @@ class HomeController extends Controller
             'rateReviewVals',
             'countLike',
             'rateReview',
-            'countComment',
-            'hasLike'
+            'countComment'
         ));
     }
 }
