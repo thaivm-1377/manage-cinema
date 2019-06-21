@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ config('app.name') }}</title>
-    {{ Html::script('assets/jquery/dist/jquery.min.js') }}
-    {{ Html::style('assets/bootstrap/dist/css/bootstrap.min.css') }}
-    {{ Html::style('css/all.css') }}
-    {{ Html::style('css/backend-style.css') }}
-    {{ Html::style('css/flat-icon/flaticon.css') }}
-    {{ Html::style('assets/font-awesome/css/font-awesome.min.css') }}
-    {{ Html::script('assets/bootstrap/dist/js/bootstrap.min.js') }}
+    {{ Html::script('assets/bower/jquery/dist/jquery.min.js') }}
+    {{ Html::style('assets/bower/bootstrap/dist/css/bootstrap.min.css') }}
+    {{ Html::style('assets/css/all.css') }}
+    {{ Html::style('assets/css/backend-style.css') }}
+    {{ Html::style('assets/css/flat-icon/flaticon.css') }}
+    {{ Html::style('assets/bower/font-awesome/css/font-awesome.min.css') }}
+    {{ Html::script('assets/bower/bootstrap/dist/js/bootstrap.min.js') }}
     @yield('css')
 </head>
 <body>
@@ -19,7 +19,7 @@
         <div class="large-12 columns content-bg">
             @include('backend.layout.top-menu')
             <div class="row">
-                @include('backend.layout.left-side-bar')
+                <!-- @include('backend.layout.left-side-bar') -->
                 @yield('main')
             </div>
         </div>

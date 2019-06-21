@@ -11,10 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    {{ HTML::style('css/app.css') }}
-    {{ Html::style('css/login.css') }}
-    {{ Html::script('assets/jquery/dist/jquery.min.js') }}
-    {{ Html::script('assets/sweetalert2/dist/sweetalert2.all.min.js') }}
+    {{ HTML::style('assets/css/app.css') }}
+    {{ Html::style('assets/css/login.css') }}
+    {{ Html::script('assets/bower/jquery/dist/jquery.min.js') }}
+    {{ Html::script('assets/bower/sweetalert2/dist/sweetalert2.all.min.js') }}
 </head>
 <body>
     <div id="app">
@@ -81,7 +81,7 @@
 
     <!-- Scripts -->
     @yield('adminJs')
-    {{ HTML::script('js/app.js') }}
-    {{ Html::script('assets/jquery/dist/jquery.min.js') }}
+    {{ HTML::script('assets/js/app.js') }}
+    {{ Html::script('assets/bower/jquery/dist/jquery.min.js') }}
 </body>
 </html>

@@ -13,9 +13,11 @@
     <div class="collapse navbar-collapse">
         <div class="input-group stylish-input-group head-bar padding0">
         <ul class="nav navbar-nav">
-            <li><a class="navbar-brand" href="{{ route('home') }}">
-        {{ HTML::image(config('asset.image_path.icon') . 'map-icon.png', trans('messages.logo'), ['class' => 'logo-img']) }}
-        myplaces</a></li>
+            <li>
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    {{ HTML::image(config('asset.image_path.icon') . 'map-icon.png', trans('messages.logo'), ['class' => 'logo-img']) }}
+                </a>
+            </li>
             <li><a class="head-item-1st active" href="{{ action('HomeController@index') }}">{{ trans('messages.home') }}</a></li>
             <div class="dropdown-cate">
                 <button class="dropbtn-cate">{{ trans('messages.category') }}</button>
