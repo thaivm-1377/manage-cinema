@@ -3,93 +3,35 @@
         <ul class="side-nav">
             <li>
                 <a class="padding-0" href="{{ route('users.index') }}">
-                    <div class="col-md-4"><i class="flaticon-profile4"></i></div>
+                    <div class="col-md-4"><i class="fa fa-user-circle-o"></i></div>
                     {{ trans('messages.user-list') }}
                 </a>
             </li>
             <li>
-                <a class="padding-0" href="{{ route('category.index') }}">
-                    <div class="col-md-4"><i class="flaticon-businessman22"></i></div>
-                    {{ trans('messages.category') }}
+                <a class="padding-0" href="">
+                    <div class="col-md-4"><i class="fa fa-windows"></i></div>
+                    {{ trans('messages.room') }}
                 </a>
             </li>
-            <li class="dropdown">
-			    <ul>
-                    <li>
-                        <dl class="accordion" data-accordion="myAccordionGroup">
-                            <dd>
-                                <a class="place-expand">
-                                    <div class="col-md-4">
-                                        <i class="flaticon-forms"></i>
-                                    </div>
-                                        {{ trans('messages.place') }}
-                                </a>
-                                <div id="panel1c" class="content">
-                                    <ul>
-                                        <li>
-                                            <a href="{{ asset('/admin/city') }}">{{ trans('messages.city') }}</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ asset('/admin/district') }}">{{ trans('messages.dist') }}</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ asset('/admin/place') }}">{{ trans('messages.place') }}</a>
-                                        </li>
-                                        @if (!$countPlace)
-                                            <li>
-                                                <a href="{{ action('PlaceController@listPlace') }}">
-                                                    <span></span>
-                                                    {{ trans('messages.placepending') }}</a>
-                                            </li>
-                                        @else
-                                            <li>
-                                                <a href="{{ action('PlaceController@listPlace') }}" class="position-relative">
-                                                    {{ trans('messages.placepending') }}
-                                                    <i class="fa fa-circle report"></i>
-                                                    <span class="place-pending">{{ $countPlace }}</span>
-                                                </a>
-                                            </li>
-                                        @endif
-                                    </ul>
-                                </div>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
+            <li>
+                <a class="padding-0" href="">
+                    <div class="col-md-4"><i class="fa fa-money"></i></div>
+                    {{ trans('messages.profit') }}
+                </a>
             </li>
-{{--             <li>
-                <a class="padding-0" href="#">
+            <li>
+                <a class="padding-0" href="{{ action('FilmController@index') }}">
                     <div class="col-md-4">
-                        <span class="flaticon-mailbox10"></span>
+                        <i class="fa fa-film" aria-hidden="true"></i>
                     </div>
-                    {{ trans('messages.slide') }}
+                    {{ trans('messages.film') }}
                 </a>
-            </li> --}}
-            @if (!$countReport)
-                <li>
-                    <a class="padding-0" href="{{ action('ReportController@index') }}">
-                        <div class="col-md-4">
-                            <i class="fa fa-file-excel-o report" aria-hidden="true"></i>
-                            <span></span>
-                        </div>
-                        {{ trans('messages.report') }}
-                    </a>
-                </li>
-            @else
-                <li>
-                    <a class="padding-0" href="{{ action('ReportController@index') }}">
-                        <div class="col-md-4">
-                            <i class="fa fa-circle report"></i>
-                            <span class="count-report-news">{{ $countReport }}</span>
-                        </div>
-                        {{ trans('messages.report') }}
-                    </a>
-                </li>
-            @endif
+            </li>
+            
             <li>
                 <a class="padding-0" href="{{ route('logout') }}">
                     <div class="col-md-4">
-                        <i class="flaticon-incoming4"></i>
+                        <i class="fa fa-sign-out"></i>
                     </div>
                     {{ trans('messages.logout') }}
                 </a>

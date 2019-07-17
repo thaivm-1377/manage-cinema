@@ -5,8 +5,7 @@ namespace App\Providers;
 use Form;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Report;
-use App\Models\Location;
+use App\Models\Film;
 use App\Models\Place;
 use App\Models\Category;
 use App\Models\Notification;
@@ -55,11 +54,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer(['backend.layout.left-side-bar'], function ($view) {
-            $countReport = Report::count();
-            $countPlace = Location::count();
+            $countReport = Film::count();
             $view->with([
                 'countReport' => $countReport,
-                'countPlace' => $countPlace,
             ]);
         });
 
@@ -119,16 +116,12 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Eloquents\CommentRepository'
         );
         $this->app->bind(
-            'App\Repositories\Contracts\ReportRepositoryInterface',
-            'App\Repositories\Eloquents\ReportRepository'
+            'App\Repositories\Contracts\FilmRepositoryInterface',
+            'App\Repositories\Eloquents\FilmRepository'
         );
         $this->app->bind(
             'App\Repositories\Contracts\CollectionRepositoryInterface',
             'App\Repositories\Eloquents\CollectionRepository'
-        );
-        $this->app->bind(
-            'App\Repositories\Contracts\LocationRepositoryInterface',
-            'App\Repositories\Eloquents\LocationRepository'
         );
         $this->app->bind(
             'App\Repositories\Contracts\CategoryValRepositoryInterface',

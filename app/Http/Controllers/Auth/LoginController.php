@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
     protected $redirectAfterLogout = '/login';
 
     /**
@@ -56,9 +56,8 @@ class LoginController extends Controller
             if (Auth::user()->level == config('const.roleAdmin')) {
                 return redirect()->route('users.store');
             }
-                return redirect()->route('home');
         }
-            return redirect()->back();
+        return redirect('login');
     }
 
     public function logout()

@@ -30,39 +30,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function comment()
+    public function booking()
     {
-        return $this->hasMany(Comment::class);
-    }
-
-    public function reports()
-    {
-        return $this->hasMany(Report::class);
-    }
-
-    public function collection()
-    {
-        return $this->hasMany(Collection::class);
-    }
-
-    public function review()
-    {
-        return $this->hasMany(Review::class);
-    }
-
-    public function rateReviewVal()
-    {
-        return $this->hasMany(RateReviewVal::class);
-    }
-
-    public function follower()
-    {
-        return $this->hasMany(Follow::class, 'userfollower_id');
-    }
-
-    public function following()
-    {
-        return $this->hasMany(Follow::class, 'userfollowing_id');
+        return $this->hasMany(Booking::class);
     }
 
     public function getPathImageAttribute()

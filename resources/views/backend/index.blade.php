@@ -14,30 +14,10 @@
                 <div class="large-3 medium-6 small-12 columns">
                     <div class="stats border">
                         <div class="left">
-                            {{ trans('messages.report') }}
-                            <h4>{{ $numberReport }} {{ trans('messages.report') }}</h4>
+                            {{ trans('messages.film') }}
+                            <h4>{{ $numberReport }} {{ trans('messages.film') }}</h4>
                         </div>
                         <i class="fi-price-tag right sales"></i>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="large-3 medium-6 small-12 columns">
-                    <div class="stats border">
-                        <div class="left">
-                            {{ trans('messages.place') }}
-                            <h4>{{ $numberPending }} {{ trans('messages.placepending') }}</h4>
-                        </div>
-                        <i class="fi-shopping-cart right orders"></i>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="large-3 medium-6 small-12 columns">
-                    <div class="stats border">
-                        <div class="left">
-                            {{ trans('messages.profit') }}
-                            <h4>$600</h4>
-                        </div>
-                        <i class="fi-dollar right profit"></i>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -51,27 +31,24 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="large-8 columns">
-                    <div class="custom-panel">
-                        <div class="custom-panel-heading">
-                            <h4>{{ trans('messages.charts') }}</h4>
+                <div class="large-3 medium-6 small-12 columns">
+                    <div class="stats border">
+                        <div class="left">
+                            {{ trans('messages.room') }}
+                            <h4>3 {{ trans('messages.room') }}</h4>
                         </div>
-                        <div class="custom-panel-body">
-                            <div id="morris-area-chart"></div>
-                        </div>
+                        <i class="fi-shopping-cart right orders"></i>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="large-4 columns">
-                    <div class="custom-panel">
-                        <div class="custom-panel-heading">
-                            <h4>{{ trans('messages.charts') }}</h4>
+                <div class="large-3 medium-6 small-12 columns">
+                    <div class="stats border">
+                        <div class="left">
+                            {{ trans('messages.profit') }}
+                            <h4>1.000.000.000 VND</h4>
                         </div>
-                        <div class="custom-panel-body">
-                            <div id="morris-donut-chart"></div>
-                        </div>
+                        <i class="fi-dollar right profit"></i>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
@@ -80,7 +57,7 @@
                 <div class="large-6 columns">
                     <div class="custom-panel">
                         <div class="custom-panel-heading">
-                            <h4>{{ trans('messages.quick-messages') }}</h4>
+                            <h4>{{ trans('messages.quick-message') }}</h4>
                         </div>
                         <div class="custom-panel-body">
                             <label>{{ trans('messages.address') }}</label>

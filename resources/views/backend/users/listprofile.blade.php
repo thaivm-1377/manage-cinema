@@ -1,14 +1,6 @@
 @extends('backend.master')
 @section('main')
 <div class="large-10 medium-12 small-12 columns light-grey-bg-pattern">
-        <div class="row">
-            <div class="large-10 columns">
-                <div class="page-name">
-                    <h3 class="left">{{ trans('messages.slide-manage') }}</h3>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
         <section id="general">
             <div class="row">
                 <div class="custom-panel columns">

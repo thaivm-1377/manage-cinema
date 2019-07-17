@@ -23,38 +23,11 @@ use Log;
 class UserController extends Controller
 {
     protected $userRepository;
-    protected $reviewRepository;
-    protected $rateRepository;
-    protected $rateValRepository;
-    protected $commentRepository;
-    protected $collectionRepository;
-    protected $imageRepository;
-    protected $placeRepository;
-    protected $followRepository;
-    protected $notificationRepository;
 
     public function __construct(
-        UserRepositoryInterface $userRepository,
-        ReviewRepositoryInterface $reviewRepository,
-        RateReviewRepositoryInterface $rateRepository,
-        RateReviewValRepositoryInterface $rateValRepository,
-        CollectionRepositoryInterface $collectionRepository,
-        PlaceRepositoryInterface $placeRepository,
-        ImageRepositoryInterface $imageRepository,
-        CommentRepositoryInterface $commentRepository,
-        FollowRepositoryInterface $followRepository,
-        NotificationRepositoryInterface $notificationRepository
+        UserRepositoryInterface $userRepository
     ) {
         $this->userRepository = $userRepository;
-        $this->reviewRepository = $reviewRepository;
-        $this->rateRepository = $rateRepository;
-        $this->rateValRepository = $rateValRepository;
-        $this->collectionRepository = $collectionRepository;
-        $this->placeRepository = $placeRepository;
-        $this->imageRepository = $imageRepository;
-        $this->commentRepository = $commentRepository;
-        $this->followRepository = $followRepository;
-        $this->notificationRepository = $notificationRepository;
     }
 
     public function index()
@@ -161,54 +134,21 @@ class UserController extends Controller
 
     public function myWall($id)
     {
-        $infoUser = $this->userRepository->find($id);
-        $reviews = $this->reviewRepository->findReview($id);
-        $checkFollow = $this->followRepository->checkFollow($id);
-        $rateReviewVals = $this->reviewRepository->listReviewVal();
-        $rateReview = $this->rateRepository->findRateLike();
-        if (Auth::check()) {
-            $userId = Auth::user()->id;
-            foreach ($reviews as $review) {
-                $countLike[$review->id] = $this->rateValRepository->getLikes($review->id);
-                $countComment[$review->id] = $this->commentRepository->getCommentNumber($review->id);
-                $hasLike[$review->id] = $this->rateValRepository->findReviewID($review->id, $userId);
-            }
-        }
-        foreach ($reviews as $review) {
-            $countLike[$review->id] = $this->rateValRepository->getLikes($review->id);
-            $countComment[$review->id] = $this->commentRepository->getCommentNumber($review->id);
-        }
-
-        return view('frontend.user.wall-profile', compact(
-            'reviews',
-            'rateReviewVals',
-            'countLike',
-            'rateReview',
-            'countComment',
-            'checkFollow',
-            'hasLike',
-            'infoUser'
-        ));
+        
     }
 
     public function showCollection($id)
     {
-        $user = $this->userRepository->find($id);
-        $collection = $this->collectionRepository->userCollection($id);
-        $collectionItem = $this->collectionRepository->findUserCollectionReview($id);
 
-        return view('frontend.user.collection', compact('collection', 'user', 'collectionItem'));
     }
 
     public function follow(Request $request)
     {
-        $dataFollow = $request->only('userfollower_id', 'userfollowing_id');
-        $userFollow = $this->followRepository->followUser($dataFollow);
+
     }
 
     public function unFollow(Request $request)
     {
-        $dataUnFollow = $request->only('userfollower_id', 'userfollowing_id');
-        $user = $this->followRepository->findAndUnFollow($dataUnFollow);
+        
     }
 }
